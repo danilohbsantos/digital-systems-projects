@@ -1,0 +1,375 @@
+Release 9.2i - xst J.36
+Copyright (c) 1995-2007 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to ./xst/projnav.tmp
+CPU : 0.00 / 0.29 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.29 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Reading design: Data_Flow.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+     9.1) Device utilization summary
+     9.2) Partition Resource Summary
+     9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Data_Flow.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Data_Flow"
+Output Format                      : NGC
+Target Device                      : xc5vlx50t-1-ff1136
+
+---- Source Options
+Top Module Name                    : Data_Flow
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Use DSP Block                      : auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Library Search Order               : Data_Flow.lso
+Keep Hierarchy                     : NO
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/SISTEMASDIGITAIS3/FD/Data_Flow.vhd" in Library work.
+Architecture behavioral of Entity data_flow is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <Data_Flow> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <Data_Flow> in library <work> (Architecture <behavioral>).
+Entity <Data_Flow> analyzed. Unit <Data_Flow> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Data_Flow>.
+    Related source file is "C:/SISTEMASDIGITAIS3/FD/Data_Flow.vhd".
+    Found 8-bit 8-to-1 multiplexer for signal <$varindex0000> created at line 62.
+    Found 8-bit register for signal <ALU_reg>.
+    Found 8-bit xor2 for signal <ALU_reg$xor0000> created at line 78.
+    Found 8-bit register for signal <rdout1>.
+    Found 8-bit register for signal <rdout2>.
+    Found 64-bit register for signal <tmp_reg>.
+    Summary:
+	inferred  88 D-type flip-flop(s).
+	inferred   8 Multiplexer(s).
+Unit <Data_Flow> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 11
+ 8-bit register                                        : 11
+# Multiplexers                                         : 1
+ 8-bit 8-to-1 multiplexer                              : 1
+# Xors                                                 : 1
+ 8-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Loading device for application Rf_Device from file '5vlx50t.nph' in environment C:\Xilinx92i.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 88
+ Flip-Flops                                            : 88
+# Multiplexers                                         : 1
+ 8-bit 8-to-1 multiplexer                              : 1
+# Xors                                                 : 1
+ 8-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <Data_Flow> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Data_Flow, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 88
+ Flip-Flops                                            : 88
+
+=========================================================================
+
+=========================================================================
+*                          Partition Report                             *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Data_Flow.ngr
+Top Level Output File Name         : Data_Flow
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 28
+
+Cell Usage :
+# BELS                             : 50
+#      LUT3                        : 9
+#      LUT4                        : 9
+#      LUT5                        : 8
+#      LUT6                        : 16
+#      MUXF7                       : 8
+# FlipFlops/Latches                : 88
+#      FDC                         : 8
+#      FDCE                        : 64
+#      FDE                         : 16
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 27
+#      IBUF                        : 19
+#      OBUF                        : 8
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 5vlx50tff1136-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             88  out of  28800     0%  
+ Number of Slice LUTs:                  42  out of  28800     0%  
+    Number used as Logic:               42  out of  28800     0%  
+
+Slice Logic Distribution: 
+ Number of Bit Slices used:             93
+   Number with an unused Flip Flop       5  out of     93     5%  
+   Number with an unused LUT:           51  out of     93    54%  
+   Number of fully used Bit Slices:     37  out of     93    39%  
+
+IO Utilization: 
+ Number of IOs:                         28
+ Number of bonded IOBs:                 28  out of    480     5%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:               1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CK                                 | BUFGP                  | 88    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+RESET                              | IBUF                   | 72    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 1.608ns (Maximum Frequency: 621.891MHz)
+   Minimum input arrival time before clock: 2.423ns
+   Maximum output required time after clock: 3.264ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CK'
+  Clock period: 1.608ns (frequency: 621.891MHz)
+  Total number of paths / destination ports: 208 / 88
+-------------------------------------------------------------------------
+Delay:               1.608ns (Levels of Logic = 2)
+  Source:            tmp_reg_7_0 (FF)
+  Destination:       rdout2_0 (FF)
+  Source Clock:      CK rising
+  Destination Clock: CK rising
+
+  Data Path: tmp_reg_7_0 to rdout2_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             1   0.471   0.789  tmp_reg_7_0 (tmp_reg_7_0)
+     LUT6:I2->O            1   0.094   0.000  Mmux__varindex0000_3 (N21)
+     MUXF7:I1->O           2   0.254   0.000  Mmux__varindex0000_2_f7 (_varindex0000<0>)
+     FDE:D                    -0.018          rdout2_0
+    ----------------------------------------
+    Total                      1.608ns (0.819ns logic, 0.789ns route)
+                                       (50.9% logic, 49.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CK'
+  Total number of paths / destination ports: 544 / 168
+-------------------------------------------------------------------------
+Offset:              2.423ns (Levels of Logic = 2)
+  Source:            RESET (PAD)
+  Destination:       rdout2_0 (FF)
+  Destination Clock: CK rising
+
+  Data Path: RESET to rdout2_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            74   0.818   0.924  RESET_IBUF (RESET_IBUF)
+     LUT4:I0->O            8   0.094   0.374  rdout2_and00001 (rdout2_and0000)
+     FDE:CE                    0.213          rdout2_0
+    ----------------------------------------
+    Total                      2.423ns (1.125ns logic, 1.298ns route)
+                                       (46.4% logic, 53.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CK'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              3.264ns (Levels of Logic = 1)
+  Source:            rdout1_7 (FF)
+  Destination:       data_out<7> (PAD)
+  Source Clock:      CK rising
+
+  Data Path: rdout1_7 to data_out<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.471   0.341  rdout1_7 (rdout1_7)
+     OBUF:I->O                 2.452          data_out_7_OBUF (data_out<7>)
+    ----------------------------------------
+    Total                      3.264ns (2.923ns logic, 0.341ns route)
+                                       (89.6% logic, 10.4% route)
+
+=========================================================================
+CPU : 37.54 / 37.87 s | Elapsed : 37.00 / 38.00 s
+ 
+--> 
+
+Total memory usage is 332236 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

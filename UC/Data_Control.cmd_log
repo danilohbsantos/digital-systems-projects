@@ -1,0 +1,1 @@
+xst -ise "C:/SISTEMASDIGITAIS3/UC/UC.ise" -intstyle ise -ifn Data_Control.xst -ofn Data_Control.syr

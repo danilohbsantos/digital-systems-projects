@@ -1,0 +1,48 @@
+ command line:
+   ./TBC_Data_Flow_isim_beh.exe
+     -intstyle  ise
+     -ipchost  localhost
+     -ipcport  61865
+
+Fri Sep 03 02:41:02 2021
+
+Total Line Count : 120
+
+ Elaboration time : 0.03125 sec.
+
+ Estimate current memory usage : 147.419 Meg. 
+
+ Total Signals          : 25
+ Total Nets             : 124
+ Total Signal Drivers   : 15
+ Total Blocks           : 7
+ Total Primitive Blocks : 1
+ Total Processes        : 6
+ Total Traceable Variables  : 0
+ Total Scalar Nets and Variables : 124
+ntrace select -o on -n /TBC_Data_Flow/ck 
+ntrace select -o on -n /TBC_Data_Flow/reset 
+ntrace select -o on -n /TBC_Data_Flow/data_in 
+ntrace select -o on -n /TBC_Data_Flow/data_out 
+ntrace select -o on -n /TBC_Data_Flow/mux_en 
+ntrace select -o on -n /TBC_Data_Flow/regwr 
+ntrace select -o on -n /TBC_Data_Flow/regrd1 
+ntrace select -o on -n /TBC_Data_Flow/regrd2 
+ntrace select -o on -n /TBC_Data_Flow/reg_add 
+ntrace select -o on -n /TBC_Data_Flow/alu_op 
+ntrace select -o on -n /TBC_Data_Flow/UUT/tmp_reg 
+ntrace select -o on -n /TBC_Data_Flow/UUT/rdout1 
+ntrace select -o on -n /TBC_Data_Flow/UUT/rdout2 
+ntrace select -o on -n /TBC_Data_Flow/UUT/muxout 
+ntrace select -o on -n /TBC_Data_Flow/UUT/alu_reg 
+ntrace start 
+isimrun 3000 ns 
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+
+ Simulation time 0.125 sec.
+
+ Estimate current memory usage : 159.752 Meg. 
+
+Fri Sep 03 03:27:35 2021
+
